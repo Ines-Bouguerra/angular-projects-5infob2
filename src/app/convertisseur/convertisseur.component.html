@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <label>montant</label>
+          <input type="number" class="form-control" [ngModelOptions]="{standalone: true}"  [(ngModel)]="montant" ngModel>
+        </div>
+        <button type="submit" (click)="startp()" class="btn btn-sm btn-primary mr-3">convert</button>
+        <button type="reset" class="btn btn-sm btn-danger">reset</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-to-euro-convert [initMontant]="montant" (convertMontant)="getNewMontant($event)" ></app-to-euro-convert>
+
+    </div>
+  </div>
